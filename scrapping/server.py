@@ -22,7 +22,9 @@ def write_to_file(data):
         file.write(f"{email}, {subject}, {message}\n")
 
 def write_to_csv(data):
-    with open("data.csv", mode="a") as database_csv:
+    # créer une entete du fichier csv s'il n'existe pas
+ 
+    with open("data.csv", newline='', mode="a") as database_csv:
         email = data["email"]
         subject = data["subject"]
         message = data["message"]
